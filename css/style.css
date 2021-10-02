@@ -1,0 +1,139 @@
+:root{ /*Adcionar variáveis*/
+    --vermelho:#E50914;
+    --preto:#141414;
+}
+
+/*Elementos base*/
+
+/*Reset. É para fazer isso pois cada navegador define uma 
+margin e padding padrão, então se não colocar isso 
+pode ficar ok em um e estranho em outro*/ 
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--preto);
+    font-family: 'Arial', Times, serif;
+    color: white;
+}
+
+header .conteiner{
+    display: flex; /*flexbox - para alinhar os elementos em tela*/
+    align-items: center; /*Ajuta os itens de maneira vertical*/
+    justify-content: space-between; /*Ajusta os itens de maneira horizontal*/
+    
+}
+
+header .logo{
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size: 40px;
+    margin-left: 5px;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+}
+
+/* a:hover é pra quando o mouse estiver encima desse elemento*/
+header nav a:hover{ 
+    color: #fff;
+
+}
+
+/*Filme principal*/
+.filme-principal{
+    font-size: 16px;
+    
+    /*linear-gradient em background muda o contraste do 
+    background, usei para deixar um pouco mais escuro para as 
+    fontes brancas aparecerem melhor.*/
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url(/resources/capa.jpg);
+    height: 400px;
+    
+    /*Vai cobrir o height ou tamanho selecionado*/
+    background-size: cover; 
+    
+    /*display: flex ajusta os elementos e por padrão é em 
+    linha ou flex-directions: row*/
+    display: flex; 
+    
+    flex-direction: column;
+    
+    /*Justify-content segue como foi selecionado no flex-direction, 
+    então se for row vai ser horizontalmente e se for collum 
+    vai ser verticalmente, seria como se eu tivesse usado o 
+    alling-itens*/
+    justify-content: center;
+    
+    align-items: flex-start;
+    
+}
+
+.filme-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.filme-principal .titulo{
+    /*valor em % ajuda para que não fique estranho em 
+    resoluções ou tamanhos de tela diferentes, no caso
+    vai ser 15% para todas as plataformas, vai parecer 
+    diferente mas não via ficar estranho*/
+    margin-top: 15%; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+}
+
+.botao{
+    background-color: rgba(0,0,0,.50);
+    border: none;
+    color: white;
+    
+    /*1 valor de padding = todos os lados. 2 valores = o 
+    1 primeiro para cima e baixo e o segundo para 
+    as laterais
+    Padding não é a msm coisa que margin, um aumenta 
+    o elemento parece e a outra o espaçamento*/
+    padding: 15px 30px;
+    
+    margin-right: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    
+    /*coloca um efeito de transição*/
+    transition: 1s ease all;
+}
+
+.botao:hover{
+    background-color: rgba(255,255,255,.50);
+    color: black;
+}
+
+.botao i{
+    margin-right: 5px;
+}
+
+.conteiner{
+    margin-left: 20px;
+}
+
+.filme-principal .conteiner{
+    width: 70%;
+}
+
+.box-filme{
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+}
+
+.carrosel-filmes{
+    margin-top: 15px;
+}
